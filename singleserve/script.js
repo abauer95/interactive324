@@ -1,5 +1,3 @@
-//verb (future) array
-//verb (present)
 var verb = ["eat", "sit on", "touch", "run towards", "attack", "accommodate", "respect", "answer", 
             "modify", "freak out", "write on", "reflect", "vote for", "breathe on", "validate", "injure", 
             "invest in", "burn", "generate", "illuminate", "stare at", "attack", "admire", "buy", 
@@ -29,7 +27,7 @@ $('video').click(function () {
 });
 
 function findSentence() {
-  var x = Math.floor(Math.random() * 11) + 1;
+  var x = Math.floor(Math.random() * 14) + 1;
 
   switch (x) {
     case 1:
@@ -64,15 +62,15 @@ function findSentence() {
       changeText("If " + findWord(adj) + " " + findWord(pluralN) + " attack your " + findWord(noun) + ", you'll know it's the end.");
       break;
     
-    case 9:
+    case 9: case 10: case 11: case 12:
       changeText("A " + findWord(adj) + " " + findWord(noun) + " will " + findWord(verb) + " all the " + findWord(pluralN) + " in your " + findWord(noun) + ".");
       break;
 
-    case 10:
+    case 13:
       changeText("The last thing you " + findWord(pastV) + " is your new " + findWord(noun) + ".");
       break;
 
-    case 11:
+    case 14:
       changeText(findDate() + " is the day you " + " " + findWord(verb) + " your " + findWord(adj) + " fears.");
       break;
 
@@ -109,7 +107,7 @@ function changeText(fortune) {
 
 function rPosition(element) {
   var x = Math.floor(Math.random() * 65);
-  var y = Math.floor(Math.random() * 40) + 30;
+  var y = Math.floor(Math.random() * 35) + 35;
   var r = Math.floor(Math.random() * 360);
   element.css("top", y + '%');
   element.css("left", x + '%');
