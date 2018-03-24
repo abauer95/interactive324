@@ -17,6 +17,7 @@
 
     #scene1 {
       margin-top: 7%;
+      animation: blurIn 0.25s ease 1;
     }
 
     #scene2,
@@ -32,6 +33,7 @@
     #scene12 {
       display: none;
       margin-top: 7%;
+      animation: blurIn 0.25s ease 1;
     }
 
     #scene1:hover,
@@ -50,7 +52,15 @@
       cursor: pointer;
       user-select: none;
     }
-
+    
+    @keyframes blurIn{
+      from{
+        filter: blur(40px);
+      }
+      to{
+        filter: blur(0px);
+      }
+    }
   </style>
 </head>
 
