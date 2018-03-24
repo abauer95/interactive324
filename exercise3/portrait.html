@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="assets/style.css">
+  <title>Endless Loop</title>
+  <style>
+    body {
+      background-color: #111;
+      background-image: url("assets/shot1.png");
+      font-family: sans-serif;
+      font-size: 24pt;
+      color: white;
+      text-align: center;
+    }
+
+    #scene1 {
+      margin-top: 7%;
+    }
+
+    #scene2,
+    #scene3,
+    #scene4,
+    #scene5,
+    #scene6,
+    #scene7,
+    #scene8,
+    #scene9,
+    #scene10,
+    #scene11,
+    #scene12 {
+      display: none;
+      margin-top: 7%;
+    }
+
+    #scene1:hover,
+    #scene2:hover,
+    #scene3:hover,
+    #scene4:hover,
+    #scene5:hover,
+    #scene6:hover,
+    #scene7:hover,
+    #scene8:hover,
+    #scene9:hover,
+    #scene10:hover,
+    #scene11:hover,
+    #scene12:hover {
+      color: cornflowerblue;
+      cursor: pointer;
+      user-select: none;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="scene1" onclick="nextScene(2)">Repairing and resupplying.</div>
+  <div id="scene2" onclick="nextScene(3)">Leaving station to explore.</div>
+  <div id="scene3" onclick="nextScene(4)">Investigating an asteroid field.</div>
+  <div id="scene4" onclick="nextScene(5)">Just a bunch of rocks.</div>
+  <div id="scene5" onclick="nextScene(6)">Found some assholes.</div>
+  <div id="scene6" onclick="nextScene(7)">Assholes start firing at me.</div>
+  <div id="scene7" onclick="nextScene(8)">So, I fireback,</div>
+  <div id="scene8" onclick="nextScene(9)">blow one up,</div>
+  <div id="scene9" onclick="nextScene(10)">and loot their wreckages.</div>
+  <div id="scene10" onclick="nextScene(11)">Checked out their refuge.</div>
+  <div id="scene11" onclick="nextScene(12)">Bounce before more arive.</div>
+  <div id="scene12" onclick="nextScene(1)">And sell their shit.</div>
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    function nextScene(number) {
+      if (number === 1) {
+        $('#scene12').css('display', 'none');
+        $('#scene1').css('display', 'block');
+        $('body').css('background-image', 'url("./assets/shot1.png")')
+      } else {
+        $('#scene' + (number - 1)).css('display', 'none');
+        $('#scene' + number).css('display', 'block');
+        $('body').css('background-image', 'url("./assets/shot' + number + '.png")')
+      }
+    }
+
+  </script>
+</body>
+
+</html>
